@@ -13,7 +13,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: 'https://chat-frontend-eight-vert.vercel.app'
+}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 // OpenAI configuration
