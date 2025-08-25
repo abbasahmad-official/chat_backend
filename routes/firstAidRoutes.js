@@ -30,7 +30,7 @@ router.get('/firstaid', async (req, res) => {
 // Function to interact with OpenAI and get advice
 const getOpenAiAdvice = async (query) => {
   try {
-    const prompt = `Provide clear first aid advice for: ${query}. Include steps if possible.`;
+    const prompt = `Provide clear first aid advice for: ${query}. Include steps if possible. Do not use asterisks (*) or hash symbols (#) anywhere in the response. Format the steps using plain numbers or dashes only.`;
 
     const response = await openai.chat.completions.create({
       model: 'gpt-4o-mini', // Or 'gpt-4o', 'gpt-3.5-turbo'
